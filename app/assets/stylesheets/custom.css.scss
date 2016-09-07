@@ -1,3 +1,56 @@
+$break-small:320px;
+$break-middle:760px;
+$break-larger:1200px;
+
 .main-part {
   margin-top: 65px;
+}
+
+.cover-header {
+  .cover-photo {
+    width: 100%;
+    height: auto;
+    @media screen and (max-width: $break-middle) {
+      height: 100%;
+      width: auto;
+      margin-left: -100px;
+    }
+  }
+
+
+  .cover-wraper {
+    height: 350px;
+    overflow: hidden;
+    margin-top: -20px;
+    border-radius: 5px;
+    @media screen and (max-width: $break-middle) {
+      height: 300px;
+    }
+  }
+
+  .header-wraper {
+    border: 1px solid #bbb;
+    border-radius: 5px;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    ul {
+      display: flex;
+      @media screen and (max-width: $break-middle) {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+    li {
+      width: 100px;
+      text-align: center;
+      @media screen and (max-width: $break-middle) {
+        width: 25%;
+      }
+    }
+  }
 }

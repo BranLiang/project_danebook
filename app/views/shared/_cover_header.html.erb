@@ -1,0 +1,15 @@
+<header class="cover-header">
+  <div class="header-wraper">
+    <div class="cover-wraper">
+      <%= image_tag "cover/cover.jpg", :alt => "cover photo", class: "cover-photo" %>
+    </div>
+    <div class="navigation">
+      <ul class="nav nav-pills">
+        <li><%= link_to "Timeline", '#' %></li>
+        <li class="<%= active_class(user_path(current_user)) %>"><%= link_to "About", user_path(current_user) %></li>
+        <li><%= link_to "Photos", '#' %></li>
+        <li><%= link_to "Friends", '#' %></li>
+      </ul>
+    </div>
+  </div>
+</header>
