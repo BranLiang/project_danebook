@@ -1,1 +1,38 @@
-<%= render 'devise/sessions/new' %>
+<div class="top-nav">
+  <nav class="navbar navbar-fixed-top navbar-default">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <%= link_to 'Danebook', root_path , class: "navbar-brand", id: "brand" %>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbar">
+            <% if user_signed_in? %>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Timeline", '#' %></li>
+                  <li><%= link_to "About", '#' %></li>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to "Logout", '#', method: "delete" %></li>
+                </ul>
+              </li>
+            </ul>
+            <% else %>
+              <!-- render the sign in form -->
+            <%= render 'devise/sessions/new' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
