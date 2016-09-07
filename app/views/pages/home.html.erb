@@ -1,1 +1,17 @@
-<h1>Hello world</h1>
+<div class="home-page">
+  <div class="row">
+    <%= devise_error_messages! %>
+    <div class="col-md-5 col-md-push-7"> <!-- sign up form area -->
+      <%= render 'devise/registrations/new' %>
+    </div>
+
+    <div class="col-md-7 col-md-pull-5"> <!-- slogan area -->
+      <div class="jumbotron">
+        <h1>Hello, world!</h1>
+        <h1>Let's Party!!</h1>
+        <h1>Ready?!!</h1>
+      </div>
+    </div>
+
+  </div>
+</div>
