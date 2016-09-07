@@ -3,4 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :rememberable
+
+  validates :username, length: { within: 4..15 },
+                       uniqueness: { case_sensitive: false }
+  validates :password, length: { minimum: 6 }
+  validates_uniqueness_of :email, case_sensitive: false
 end
