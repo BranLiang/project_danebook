@@ -9,7 +9,7 @@
       <div class="media-body">
         <h4 class="media-heading"><%= @user.username %><span class="text-muted pull-right"><small><%= post.created_at %></small></span></h4>
         <%= post.body %>
-        <p class="text-right"><%= post_delete_link(post) %></p>
+        <p><span class="pull-left"><%= likes_link(post) %></span><span class="pull-right"><%= post_delete_link(post) %></span></p>
       </div>
     </div>
   <% end %>

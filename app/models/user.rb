@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy, counter_cache: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -12,5 +13,9 @@ class User < ApplicationRecord
 
   def has_posts?
     !self.posts.empty?
+  end
+
+  def already_liked?(staff)
+    self.likes.find_by(likeable: staff) ? true : false
   end
 end

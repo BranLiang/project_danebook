@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'timeline/:id', to: 'pages#timeline', as: 'timeline'
   resources :users, only: [:show, :edit, :update, :index]
   resources :posts, except: [:new, :index]
+  resources :likes, only: [:create, :destroy]
 end
