@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
   before_action :require_current_user!, only: [:update, :edit]
 
   def show

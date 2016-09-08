@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'timeline/:id', to: 'pages#timeline', as: 'timeline'
   resources :users, only: [:show, :edit, :update]
+  resources :posts, except: [:new]
 end

@@ -5,6 +5,7 @@ RSpec.describe User, type: :model do
     user = build(:user)
     expect{user.save!}.not_to raise_error
   end
+  it { should have_many(:posts).dependent(:destroy) }
   # username
   it do
     should validate_length_of(:username).
