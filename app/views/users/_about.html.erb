@@ -35,7 +35,7 @@
                 <% if current_path == user_path %>
                   <%= @user.about_me %>
                   <hr>
-                  <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary" %>
+                  <%= edit_profile_link %>
                 <% elsif current_path == edit_user_path %>
                   <%= form_for @user do |f| %>
                   <div class="form-group">

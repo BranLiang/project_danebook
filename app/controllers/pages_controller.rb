@@ -4,5 +4,9 @@ class PagesController < ApplicationController
   def home
   end
 
+  def timeline
+    @user = User.find_by_id(params[:id])
+  end
+
 
 end
