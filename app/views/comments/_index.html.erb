@@ -1,0 +1,23 @@
+<% if post.has_comments? %>
+  <% post.comments.each do |comment| %>
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" src="..." alt="...">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><strong><%= comment.user.username %></strong></h4>
+        <%= comment.body %>
+        <p><span class="pull-left"><%= likes_link(comment) %></span><span class="pull-right"><%= comment_delete_link(comment) %></span></p>
+        <div class="clearfix"></div>
+        <div class="likes_count">
+          <%= "#{comment.likes_count}  " %><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+          <% likers_name(comment).each do |name| %>
+            <%= "  #{name}. " %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

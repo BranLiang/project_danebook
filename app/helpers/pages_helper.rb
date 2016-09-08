@@ -11,12 +11,8 @@ module PagesHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
-  def is_current_user?
-    current_user == User.find_by_id(params[:id])
-  end
-
   def post_delete_link(post)
-    if is_current_user?
+    if belongs_to_current_user?(post)
       link = link_to("Delete", post_path(post), method: "delete")
       link.html_safe
     end

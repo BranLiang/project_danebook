@@ -5,8 +5,9 @@ class PagesController < ApplicationController
   end
 
   def timeline
+    @comment = Comment.new
     @post = Post.new
-    @user = User.includes(:posts => [:likes => :user]).find_by_id(params[:id])
+    @user = User.includes(:posts => [{:likes => :user}, {:comments => [:user, {:likes => :user}]}]).find_by_id(params[:id])
   end
 
 

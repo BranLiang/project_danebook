@@ -17,6 +17,8 @@
             <%= "  #{name}. " %>
           <% end %>
         </div>
+        <%= render 'comments/index', post: post %>
+        <%= render 'comments/new', post: post %>
       </div>
     </div>
   <% end %>

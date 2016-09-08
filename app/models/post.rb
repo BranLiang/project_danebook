@@ -4,4 +4,8 @@ class Post < ApplicationRecord
   has_many :comments, :as => :commentable, dependent: :destroy
 
   validates :body, presence: true
+
+  def has_comments?
+    self.comments.empty? ? false : true
+  end
 end
