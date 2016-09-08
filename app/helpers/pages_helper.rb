@@ -15,10 +15,17 @@ module PagesHelper
     current_user == User.find_by_id(params[:id])
   end
 
+  def post_delete_link(post)
+    if is_current_user?
+      link = link_to("Delete", post_path(post), method: "delete")
+      link.html_safe
+    end
+  end
+
   def edit_profile_link
     if is_current_user?
-      str = link_to("Edit Profile", edit_user_path(@user), class: "btn btn-primary")
-      str.html_safe
+      link = link_to("Edit Profile", edit_user_path(@user), class: "btn btn-primary")
+      link.html_safe
     end
   end
 end

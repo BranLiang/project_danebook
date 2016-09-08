@@ -7,21 +7,8 @@
       <main>
         <div class="row">
           <div class="col-md-7 col-md-push-5">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title text-center"><strong>New Post</strong></h3>
-              </div>
-              <div class="panel-body">
-                <%= form_for @post do |f| %>
-                  <div class="form-group">
-                    <%= f.text_area :body, class: "form-control", rows: 8 %>
-                  </div>
-                  <div class="form-group">
-                    <%= f.submit "Post Confirm", class: "btn btn-lg btn-primary btn-block" %>
-                  </div>
-                <% end %>
-              </div>
-            </div>
+            <%= render 'posts/new' %>
+            <%= render 'posts/index' %>
           </div>
 
           <div class="col-md-5 col-md-pull-7">

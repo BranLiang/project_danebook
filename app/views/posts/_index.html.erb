@@ -1,0 +1,16 @@
+<% if @user.has_posts? %>
+  <% @user.posts.each do |post| %>
+    <div class="media media-wrap">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" src="..." alt="...">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= @user.username %><span class="text-muted pull-right"><small><%= post.created_at %></small></span></h4>
+        <%= post.body %>
+        <p class="text-right"><%= post_delete_link(post) %></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>

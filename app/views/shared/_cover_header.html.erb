@@ -8,7 +8,7 @@
         <li class="<%= active_class(timeline_path(current_user)) %>"><%= link_to "Timeline", timeline_path(current_user) %></li>
         <li class="<%= active_class(user_path(current_user)) %>"><%= link_to "About", user_path(current_user) %></li>
         <li><%= link_to "Photos", '#' %></li>
-        <li><%= link_to "Friends", '#' %></li>
+        <li class="<%= active_class(users_path) %>"><%= link_to "Friends", users_path %></li>
       </ul>
     </div>
   </div>

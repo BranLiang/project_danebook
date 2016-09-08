@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :require_current_user!, only: [:update, :edit]
 
+  def index
+    @users = User.all
+  end
+
   def show
     @user = User.find_by_id(params[:id])
   end

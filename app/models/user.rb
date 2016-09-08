@@ -9,4 +9,8 @@ class User < ApplicationRecord
                        uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }, allow_nil: true
   validates_uniqueness_of :email, case_sensitive: false
+
+  def has_posts?
+    !self.posts.empty?
+  end
 end
