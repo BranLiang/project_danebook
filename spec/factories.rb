@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :like do
+    
+  end
   factory :post do
     body "hello this is post body"
     author
