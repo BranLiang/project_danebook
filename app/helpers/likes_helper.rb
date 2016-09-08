@@ -6,4 +6,15 @@ module LikesHelper
       link_to("Like", likes_path(id: staff, type: staff.class), method: "post").html_safe
     end
   end
+
+  def likers_name(staff)
+    if staff.likes_count == 0
+      return []
+    else
+      names = staff.likes.map do |like|
+        like.user.username
+      end
+      return names[0..2]
+    end
+  end
 end

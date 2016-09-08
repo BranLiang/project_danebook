@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def timeline
     @post = Post.new
-    @user = User.includes(:posts).find_by_id(params[:id])
+    @user = User.includes(:posts => [:likes => :user]).find_by_id(params[:id])
   end
 
 

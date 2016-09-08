@@ -1,8 +1,7 @@
 class LikesController < ApplicationController
   def create
     like = current_user.likes.build(likeable_type: params[:type],
-                                    likeable_id: params[:id],
-                                    like: true)
+                                    likeable_id: params[:id])
     if like.save
       flash[:success] = "Great! You like it."
     else
