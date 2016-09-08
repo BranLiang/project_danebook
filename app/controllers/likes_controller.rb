@@ -7,7 +7,7 @@ class LikesController < ApplicationController
     else
       flash[:danger] = "You already liked it."
     end
-    redirect_to :back
+    redirect_back(fallback_location: fallback_location)
   end
 
   def destroy
@@ -15,7 +15,7 @@ class LikesController < ApplicationController
                                       likeable_id: params[:id])
     if like && like.destroy
       flash[:success] = "Unlike Mother fucker"
-      redirect_to :back
+      redirect_back(fallback_location: fallback_location)
     end
   end
 end

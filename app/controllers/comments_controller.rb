@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     else
       flash[:danger] = "Your comment is not successfull"
     end
-    redirect_to :back
+    redirect_back(fallback_location: fallback_location)
   end
 
   def destroy
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     else
       flash[:danger] = "You can not delete this comment"
     end
-    redirect_to :back
+    redirect_back(fallback_location: fallback_location)
   end
 
   private

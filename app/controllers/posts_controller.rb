@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  before_action :require_current_user!
 
   def create
     @post = current_user.posts.build(white_list_params)

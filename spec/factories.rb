@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :comment do
     body "this is a comment"
+    likes_count
     user
   end
   factory :like do
@@ -15,5 +16,6 @@ FactoryGirl.define do
     sequence(:username){ |n| "Foo#{n}"}
     email  { "#{username}@email.com" }
     password "foobar"
+    about_me "I am a badass"
   end
 end
