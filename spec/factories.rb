@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :comment do
     body "this is a comment"
-    likes_count
+    likes_count '0'
+    post
     user
   end
   factory :like do
@@ -9,6 +10,7 @@ FactoryGirl.define do
   end
   factory :post do
     body "hello this is post body"
+    likes_count '0'
     author
   end
 
