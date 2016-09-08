@@ -6,6 +6,8 @@ RSpec.describe User, type: :model do
     expect{user.save!}.not_to raise_error
   end
   it { should have_many(:posts).dependent(:destroy) }
+  it { should have_many(:likes).dependent(:destroy) }
+  it { should have_many(:comments).dependent(:destroy) }
   # username
   it do
     should validate_length_of(:username).
@@ -19,4 +21,5 @@ RSpec.describe User, type: :model do
   end
   # email
   it { should validate_uniqueness_of(:email).on(:create).case_insensitive }
+
 end

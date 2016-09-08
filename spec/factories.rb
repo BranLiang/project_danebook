@@ -1,9 +1,10 @@
 FactoryGirl.define do
   factory :comment do
-    
+    body "this is a comment"
+    user
   end
   factory :like do
-    
+    user
   end
   factory :post do
     body "hello this is post body"
