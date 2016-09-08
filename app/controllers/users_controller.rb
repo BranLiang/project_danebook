@@ -11,12 +11,17 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by_id(params[:id])
-    if @user && @user.update(:about_me => params[:about_me])
+    if @user && @user.update(white_list_params)
       flash[:success] = "Profile updated successfully!"
       redirect_to user_path(@user)
     else
-      flash[:danger] = "Information is not valid"
+      flash.now[:danger] = "Information is not valid"
       render :edit
     end
   end
+
+  private
+    def white_list_params
+      params.require(:user).permit(:about_me)
+    end
 end

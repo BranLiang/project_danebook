@@ -34,11 +34,12 @@
                 <div class="panel-body">
                 <% if current_path == user_path %>
                   <%= @user.about_me %>
-                  <%= link_to 'Edit Profile', edit_user_path(@user), class: "pull-right btn btn-primary" %>
+                  <hr>
+                  <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary" %>
                 <% elsif current_path == edit_user_path %>
                   <%= form_for @user do |f| %>
                   <div class="form-group">
-                    <%= f.text_field :about_me, class: "form-control" %>
+                    <%= f.text_area :about_me, class: "form-control", rows: 8 %>
                   </div>
                   <div class="form-group">
                     <%= f.submit "Confirm", class: "btn btn-primary" %>
